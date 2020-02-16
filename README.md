@@ -7,10 +7,9 @@
 |passrord|string|null: false|
 
 ###Association
-- has_many :groups, through: members
+- has_many :groups, through: members :through: :members
 - has_many :messages
-- has_many :members, through: members
-
+- has_many :members,
 
 ##groupsテーブル
 
@@ -19,8 +18,9 @@
 |name|string|null: false, unique: true
 
 ###Association
-has_many :users, through: :members
-has_many :messages
+- has_many :users, through: :members
+- has_many :messages
+- has_many :menbers 
 
 
 ##messagesテーブル
@@ -29,12 +29,12 @@ has_many :messages
 |------|----|-------|
 |body|string|
 |image|string|
-|users_id|reference|null: false, foreign_key: true 
+|users_id|reference|null: false, - - - foreign_key: true 
 |groups_id|reference|null: false, foreign_key: true
 
 ###Association
-belongs_to :group
-belongs_to :user
+- belongs_to :group
+- belongs_to :user
 
 
 ##membersテーブル
@@ -45,5 +45,5 @@ belongs_to :user
 |groups_id|reference|null: false, foreign_key: true|
 
 ###Association
-belongs_to :group
-belongs_to :user
+- belongs_to :group
+- belongs_to :user
