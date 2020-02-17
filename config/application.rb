@@ -12,7 +12,6 @@ module ChatSpacex
       g.stylesheets false
       g.javascripts false
       g.helper false
-      g.test_framework false
-    end
+      g.test_fra
   end
 end
